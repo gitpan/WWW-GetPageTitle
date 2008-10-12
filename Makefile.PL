@@ -10,6 +10,7 @@ WriteMakefile
           'PREREQ_PM' => {
                            'Test::More' => 0,
                            'LWP::UserAgent' => '2.036',
+                           'HTML::Entities' => '1.35',
                            'Class::Data::Accessor' => '0.04001'
                          }
         )

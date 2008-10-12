@@ -3,9 +3,10 @@ package WWW::GetPageTitle;
 use warnings;
 use strict;
 
-our $VERSION = '0.0101';
+our $VERSION = '0.0102';
 
 use LWP::UserAgent;
+use HTML::Entities;
 use base 'Class::Data::Accessor';
 __PACKAGE__->mk_classaccessors qw/
     error
@@ -50,6 +51,14 @@ sub get_title {
     }
 
     my $title = $response->title;
+
+    unless ( defined $title ) {
+        ( $title ) = $response->decoded_content =~ m|<title[^>]*>(.+?)</title>|si;
+        decode_entities( $title );
+    }
+
+    $title = 'N/A'
+        unless defined $title;
 
     return $self->title( $title );
 }

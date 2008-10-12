@@ -1,5 +1,8 @@
 Revision history for WWW-GetPageTitle
 
+0.0102  October 12, 2008
+        Added a second check for the title
+
 0.0101  October 12, 2008
         First version, released on an unsuspecting world.
 

@@ -13,6 +13,7 @@ my $builder = Module::Build->new(
     requires => {
         'LWP::UserAgent'        => 2.036,
         'Class::Data::Accessor' => 0.04001,
+        'HTML::Entities'        => 1.35,
     },
     add_to_cleanup      => [ 'WWW-GetPageTitle-*' ],
     create_makefile_pl => 'traditional',

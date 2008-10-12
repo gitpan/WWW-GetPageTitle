@@ -1,6 +1,6 @@
 ---
 name: WWW-GetPageTitle
-version: 0.0101
+version: 0.0102
 author:
   - 'Zoffix Znet <zoffix@cpan.org>'
 abstract: get titles of web pages
@@ -9,13 +9,14 @@ resources:
   license: http://dev.perl.org/licenses/
 requires:
   Class::Data::Accessor: 0.04001
+  HTML::Entities: 1.35
   LWP::UserAgent: 2.036
 build_requires:
   Test::More: 0
 provides:
   WWW::GetPageTitle:
     file: lib/WWW/GetPageTitle.pm
-    version: 0.0101
+    version: 0.0102
 generated_by: Module::Build version 0.2808
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
