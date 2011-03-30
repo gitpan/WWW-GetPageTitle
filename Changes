@@ -1,5 +1,8 @@
 Revision history for WWW-GetPageTitle
 
+0.0103  March 30, 2011
+        Fix a bug where undefined titles would cause a crash
+
 0.0102  October 12, 2008
         Added a second check for the title
 

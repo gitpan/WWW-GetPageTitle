@@ -3,7 +3,7 @@ package WWW::GetPageTitle;
 use warnings;
 use strict;
 
-our $VERSION = '0.0102';
+our $VERSION = '0.0103';
 
 use LWP::UserAgent;
 use HTML::Entities;
@@ -54,7 +54,8 @@ sub get_title {
 
     unless ( defined $title ) {
         ( $title ) = $response->decoded_content =~ m|<title[^>]*>(.+?)</title>|si;
-        decode_entities( $title );
+        decode_entities( $title )
+            if defined $title;
     }
 
     $title = 'N/A'
@@ -178,6 +179,8 @@ constructor (C<new()> method). Returns the object that is used to access pages.
 
 Zoffix Znet, C<< <zoffix at cpan.org> >>
 (L<http://zoffix.com/>, L<http://haslayout.net/>, L<http://zofdesign.com/>)
+
+Bug reports and fixes by: Geistteufel
 
 =head1 BUGS
 
