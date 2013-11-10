@@ -3,17 +3,17 @@ package WWW::GetPageTitle;
 use warnings;
 use strict;
 
-our $VERSION = '0.0103';
+our $VERSION = '0.0104';
 
 use LWP::UserAgent;
 use HTML::Entities;
 use base 'Class::Data::Accessor';
-__PACKAGE__->mk_classaccessors qw/
+__PACKAGE__->mk_classaccessors( qw/
     error
     title
     ua
     uri
-/;
+/);
 
 sub new {
     my ( $class, %args ) = @_;
@@ -67,6 +67,8 @@ sub get_title {
 1;
 __END__
 
+=encoding utf8
+
 =head1 NAME
 
 WWW::GetPageTitle - get titles of web pages
@@ -87,9 +89,18 @@ WWW::GetPageTitle - get titles of web pages
 
 =head1 DESCRIPTION
 
-The module doesn't do much, it was designed for an IRC bot, so flames > /dev/null.
+The module doesn't do much, it was designed for an IRC bot,
+so flames > /dev/null.
 
 The module simply accesses a website and gets its title. 
+
+=head1 IMPORTANT WARNING
+
+B<After reviewing this module 5 years after writing it, I came
+across> L<URI::Title>B<, which seems to be much more robust and useful.
+If URI::Title does the job for you, please use it, as I might
+remove this module in the future, seeing as URI::Title
+does the same thing and MORE than this module.>
 
 =head1 CONSTRUCTOR
 
